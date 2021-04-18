@@ -28,8 +28,10 @@ export class FbService {
 
   addCity(name: string) {
     return this.auth.uid()
-            .pipe(switchMap(uid => this.fs
-                          .write(`${uid}/${name}`, {name, added: new Date()})
-                          .pipe(first()), first()));
+      .pipe(switchMap((uid) => {
+        return this.fs
+          .write(`${uid}/${name}`, {name, added: new Date()})
+          .pipe(first());
+      }), first());
   }
 }

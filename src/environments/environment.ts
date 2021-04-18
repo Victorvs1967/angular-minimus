@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-  appID: '',
+  appID: 'ec71e147f66279341df796f4b263254c',
   config: {
-    apiKey: '',
+    apiKey: 'AIzaSyAKZZlybiA044THfuJbrh-M28f7MGE4Umc',
     authDomain: '',
     databaseURL: '',
-    projectId: '',
+    projectId: 'angular-minimus-70a8c',
     storageBucket: '',
-    messagingSenderId: ''
+    messagingSenderId: '703044698747'
   }
 };
 
