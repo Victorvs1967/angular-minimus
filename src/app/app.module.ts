@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AngularFireLite } from 'angularfire-lite';
+import {NguiAutoCompleteModule} from '@ngui/auto-complete';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NguiAutoCompleteModule,
     FormsModule,
     AngularFireLite.forRoot(environment.config)
   ],

@@ -1,7 +1,7 @@
 <section class="weather__card" (click)="openDetails()"
 				*ngIf="addMode ? !cityAdded && cityName : true"
 				[ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
-	<span class="city-name__text">Paris</span>
+	<span class="city-name__text">{{ cityName }}</span>
 	<div class="weather-icon__container" [ngSwitch]="true">
 		<svg *ngSwitchCase="state === 'Sunny' || state === 'Clear'" viewBox="2050 -845 262 262">
 			<circle cx="131" cy="131" r="131" fill="#ffde17" data-name="Sun Icon" transform="translate(2050 -845)" />
@@ -61,7 +61,7 @@
 			<svg class="min-arrow__icon" viewBox="188.5 807 21 21">
 				<path fill="#00ff9b" d="M209.5 817.5h-21L199 828z" data-name="Min Arrow" />
 			</svg>
-			<span class="min-temterature__text">{{ minTemp }}</span>
+			<span class="min-temperature__text">{{ minTemp }}</span>
 			<span class="min__text">Min</span>
 		</div>
 		
@@ -69,7 +69,7 @@
 			<svg class="max-arrow__icon" viewBox="449.5 820 21 21">
 				<path fill="red" d="M449.5 830.5h21L460 820z" data-name="Max Arrow" />
 			</svg>
-			<span class="max-temperature__text">{{ maxTEmp }}</span>
+			<span class="max-temperature__text">{{ maxTemp }}</span>
 			<span class="max__text">Max</span>
 		</div>
 	</section>

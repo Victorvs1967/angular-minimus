@@ -28,7 +28,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
       .pipe(first())
       .subscribe(payload => {
         this.maxTemp = Math.round(payload[0].main.temp);
-        this.minTemp - Math.round(payload[0].main.temp);
+        this.minTemp = Math.round(payload[0].main.temp);
         for (const res of payload) {
           if (new Date().toLocaleTimeString('en-GB') === new Date(res.dt_text).toLocaleDateString('en-Gb')) {
             this.maxTemp = res.main.temp > this.maxTemp ? Math.round(res.main.temp) : this.maxTemp;

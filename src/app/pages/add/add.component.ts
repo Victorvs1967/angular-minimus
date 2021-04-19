@@ -33,7 +33,7 @@ export class AddComponent implements OnInit, OnDestroy {
     .pipe(first())
     .subscribe((countries: Array<any>) => {
       countries.forEach((country: any) => {
-        if (country.capital.lenght) {
+        if (country.capital.length) {
           this.capitals.push(country.capital);
         }
       });

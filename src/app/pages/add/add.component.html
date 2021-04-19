@@ -10,7 +10,7 @@
             auto-complete [(ngModel)]="selectedCity"
             (keyup.enter)="selectCity(input.value)"
             (ngModelChange)="selectCity(input.value)"
-            source="capitals" max-num-list="5" close-on-focusout="false" #input />
+            [source]="capitals" [max-num-list]="5" [close-on-focusout]="false" #input />
           <button class="search-city-btn" (click)="selectCity(input.value)">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
               <path fill="#FFF"
@@ -91,7 +91,7 @@
           <div class="fav-city-name-wrapper">
             <span class="fav-city-name">PARIS</span>
             <span class="fav-city-country">FR</span>
-            <span class="fav-city-state">{{ state }}</span>
+            <div><span class="fav-city-state">{{ state }}</span></div>
           </div>
           <button class="fav-city-add-btn" [ngClass]="{'fav-city-added-btn': followedCM}" (click)="addCityOfTheMonth()"
             [disabled]="followedCM">{{ followedCM ? "FOLLOWED" : "FOLLOW" }}</button>
