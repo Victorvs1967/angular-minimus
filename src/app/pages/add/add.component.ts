@@ -26,7 +26,7 @@ export class AddComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.weather.getWeather(this.city).subscribe((payload: any) => {
       this.state = payload.weather[0].main;
-      this.temp = Math.ceil(Number(payload.mai.temp));
+      this.temp = Math.ceil(Number(payload.main.temp));
     });
 
     this.http.get('https://restcountries.eu/rest/v2/all')

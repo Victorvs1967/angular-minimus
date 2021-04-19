@@ -16,7 +16,7 @@ export class WeatherService {
   constructor(public http: HttpClient) { }
 
   getWeather(city: string, metric: 'metric' | 'imperial' = 'metric'): Observable<any> {
-    return this.http.get(`${this.baseUrl}${city}&unit=${metric}&appid=${this.appID}`)
+    return this.http.get(`${this.baseUrl}${city}&units=${metric}&appid=${this.appID}`)
       .pipe(first());
   }
 
