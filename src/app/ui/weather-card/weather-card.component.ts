@@ -27,10 +27,10 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
     this.weather.getForecast(city)
       .pipe(first())
       .subscribe(payload => {
-        this.maxTemp = Math.round(payload[0].main.temp);
-        this.minTemp = Math.round(payload[0].main.temp);
+        this.maxTemp = Math.round(payload[0].main.temp_max);
+        this.minTemp = Math.round(payload[0].main.temp_min);
         for (const res of payload) {
-          if (new Date().toLocaleTimeString('en-GB') === new Date(res.dt_text).toLocaleDateString('en-Gb')) {
+          if (new Date().toLocaleTimeString('en-GB') === new Date(res.dt_txt).toLocaleDateString('en-Gb')) {
             this.maxTemp = res.main.temp > this.maxTemp ? Math.round(res.main.temp) : this.maxTemp;
             this.minTemp = res.main.temp < this.minTemp ? Math.round(res.main.temp) : this.minTemp;
           }
@@ -42,7 +42,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   }
   @Input() addMode;
   @Output() cityStored = new EventEmitter();
-  cityWeather: Object;
+  citesWeather: Object;
   darkMode: boolean;
   sub1: Subscription;
   state: string;
@@ -68,6 +68,12 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
     }
 
     openDetails() {
+      if (!this.addMode) {
+        this.router.navigateByUrl('/details/' + this.cityName);
+      }
+  }
+
+    addCity() {
       this.fb.addCity(this.cityName).subscribe(() => {
         this.cityName = null;
         this.maxTemp = null;

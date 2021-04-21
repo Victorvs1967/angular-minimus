@@ -41,6 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.toggleMenu();
     this.router.navigateByUrl('/login');
     this.fb.auth.signout();
+    this.loggedIn = this.fb.isAuth();
   }
 
 }

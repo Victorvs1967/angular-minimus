@@ -1,5 +1,6 @@
-<div class="add-wrapper">
+<div class="add-wrapper">  
   <section class="main-card">
+    <!-- Left section -->
     <div class="city-search-wrapper">
       <div class="city-search-header">
         <h3 class="city-search-title">SEARCH CITIES</h3>
@@ -19,15 +20,16 @@
             </svg>
           </button>
         </div>
-        <span class="city-search-hr">0 0 0</span>
+        <span class="city-search-hr">0  0  0</span>
       </div>
       <div class="city-search-body">
-        <span class="city-invalid-note"></span>
+        <span class="city-invalid-note" *ngIf="showNote">City name is not valid. Note: only capital cities are supported for now</span>
         <app-weather-card  (cityStored)="selectedCity = ''" *ngIf="cardCity" [city]="cardCity" [addMode]="true"></app-weather-card>
       </div>
     </div>
+    <!-- Right section -->
     <div class="fav-city-wrapper">
-      <img src="https://www.viajarsolo.com/thumbnails/gallery_image_full/components/kcfinder/kcfinder-3.12/upload/images/0B8ejrJ3IlSZvQUdyWHgtZjdtVVE.jpg?itok=Y2KZ6rfH" alt="city" class="fav-city-image" />
+      <img src="assets/chris-karidis-nnzkZNYWHaU-unsplash.jpg" alt="city" class="fav-city-image" />
       <div class="fav-city-image-overlay"></div>
     <div class="fav-city-header">
       <h3 class="fav-city-title">CITY OF THE MONTH</h3>
@@ -45,8 +47,7 @@
                 data-name="Subtraction 1" />
             </g>
           </svg>
-          <svg *ngSwitchCase="state === 'Rain' || state === 'Drizzle' || state === 'Mist'"
-            viewBox="3170 -843.1 163.5 242.7">
+          <svg *ngSwitchCase="state === 'Rain' || state === 'Drizzle' || state === 'Mist'" viewBox="3170 -843.1 163.5 242.7">
             <g data-name="Rain Icon">
               <g data-name="Water Drops">
                 <path fill="#0032cc" d="M3295.4-824.5s85.8 133.5 0 133.5 0-133.5 0-133.5z" data-name="Path 7" />

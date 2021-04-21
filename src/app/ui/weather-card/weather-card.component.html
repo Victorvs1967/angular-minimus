@@ -76,7 +76,7 @@
 	<button class="add-city-btn" *ngIf="addMode" (click)="addCity()">ADD CITY +</button>
 </section>
 
-<div class="city-added-note">
+<div *ngIf="cityAdded" class="city-added-note">
 	<h5 class="add-success-text">City has been successfully added!</h5>
 	<svg viewBox="0 0 50 50" height="5rem">
 		<circle cx="25" cy="25" r="25" fill="#25ae88" />

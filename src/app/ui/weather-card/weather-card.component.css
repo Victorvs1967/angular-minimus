@@ -30,12 +30,20 @@
   letter-spacing: 0.1rem;
   margin-bottom: 1rem;
 }
+.temperature-text__container {
+  display: flex;
+  flex-flow: column;
+  text-align: start;
+}
 .temperature__text {
   align-self: end;
   width: 100%;
   font-size: 4rem;
   font-weight: 100;
   letter-spacing: 0.1rem;
+}
+.temperature-condition__text {
+  font-size: 1.5rem;
 }
 .temperature-metric__text {
   text-align: start;
@@ -55,7 +63,7 @@
 }
 .min-arrow__icon, .max-arrow__icon {
   height: 1.25rem;
-  width: auto;
+  margin: auto;
 }
 .max-arrow__icon {
   margin-bottom: -0.05rem;

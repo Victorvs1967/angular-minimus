@@ -24,6 +24,7 @@ export class AddComponent implements OnInit, OnDestroy {
   constructor(public http: HttpClient, public weather: WeatherService, public fb: FbService) { }
 
   ngOnInit(): void {
+    
     this.weather.getWeather(this.city).subscribe((payload: any) => {
       this.state = payload.weather[0].main;
       this.temp = Math.ceil(Number(payload.main.temp));

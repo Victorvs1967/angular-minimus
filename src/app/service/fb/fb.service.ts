@@ -23,7 +23,7 @@ export class FbService {
 
   getCities() {
     return this.auth.uid()
-            .pipe(switchMap(uid => this.fs.read(`$(uid)`)));
+            .pipe(switchMap(uid => this.fs.read(`${uid}`)));
   }
 
   addCity(name: string) {
