@@ -66,7 +66,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
       const dates = {};
       for (const res of payload[1]) {
         const date = new Date(res.dt_txt.split(' ')[0]).toDateString().split(' ')[0];
-        console.log(date);
         if (dates[date]) {
           dates[date].counter += 1;
           dates[date].temp += res.main.temp;
