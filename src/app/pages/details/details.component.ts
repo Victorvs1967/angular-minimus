@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { forkJoin, Subscription } from 'rxjs';
+import { forkJoin, Subscription, Observable } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 import { UiService } from 'src/app/service/ui/ui.service';
 import { WeatherService } from 'src/app/service/weather/weather.service';
@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   sub1: Subscription;
   sub2: Subscription;
   errorMessage: string;
-  // tweets$: Observable<any>;
+  tweets$: Observable<any>;
 
   constructor(public activateRouter: ActivatedRoute, public weather: WeatherService, public ui: UiService) { }
 
