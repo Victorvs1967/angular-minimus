@@ -1,6 +1,6 @@
 .add__card {
   background-color: #ffffff;
-  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  box-shadow: 0 0 2rem 2rem rgba(0, 0, 255, 0.1);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;

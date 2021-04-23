@@ -65,8 +65,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.wind = Math.round(Math.round(payload[0].wind.speed));
       const dates = {};
       for (const res of payload[1]) {
-        const date = new Date(res.dt_txt.split(' ')[0]).toDateString().split(' ')[0];
+        const dateRaw = new Date(res.dt_txt.split(' ')[0])
+        const date = dateRaw.toLocaleString().split(' ')[0];
         if (dates[date]) {
+          dates[date].day = days[dateRaw.getDay()];
           dates[date].counter += 1;
           dates[date].temp += res.main.temp;
         } else {
@@ -84,7 +86,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.errorMessage = err.error.message;
       setTimeout(() => this.errorMessage = '', 2500);
     });
-// this.tweets$ = this.twitter.fetchTweets(this.city);
+  // this.tweets$ = this.twitter.fetchTweets(this.city);
   }
 
   ngOnDestroy(): void {
