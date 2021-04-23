@@ -1009,7 +1009,7 @@ function DetailsComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     const day_r1 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngSwitch", true);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](day_r1.key);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](day_r1.value.day);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngSwitchCase", day_r1.value.state === "Clouds");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
@@ -1068,8 +1068,10 @@ class DetailsComponent {
             this.wind = Math.round(Math.round(payload[0].wind.speed));
             const dates = {};
             for (const res of payload[1]) {
-                const date = new Date(res.dt_txt.split(' ')[0]).toDateString().split(' ')[0];
+                const dateRaw = new Date(res.dt_txt.split(' ')[0]);
+                const date = dateRaw.toLocaleString().split(' ')[0];
                 if (dates[date]) {
+                    dates[date].day = days[dateRaw.getDay()];
                     dates[date].counter += 1;
                     dates[date].temp += res.main.temp;
                 }
