@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AngularFireLite } from 'angularfire-lite';
-import {NguiAutoCompleteModule} from '@ngui/auto-complete';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ErrorComponent } from './ui/error/error.component';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     NguiAutoCompleteModule,
     FormsModule,
-    AngularFireLite.forRoot(environment.config)
+    MatIconModule,
+    AngularFireLite.forRoot(environment.config),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

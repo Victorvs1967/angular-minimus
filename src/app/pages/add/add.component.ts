@@ -20,6 +20,7 @@ export class AddComponent implements OnInit, OnDestroy {
   showNote = false;
   followedCM = false;
   sub1;
+  today = new Date(Date.now()).toLocaleDateString('en-RU', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' });
 
   constructor(public http: HttpClient, public weather: WeatherService, public fb: FbService) { }
 

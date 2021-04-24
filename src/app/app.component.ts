@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(public ui: UiService, public fb: FbService, public router: Router) {}
   
-  today = new Date(Date.now()).toDateString();
+  today = new Date(Date.now()).toLocaleDateString('en-RU', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' });
   loggedIn = this.fb.isAuth();
   sub1;
 

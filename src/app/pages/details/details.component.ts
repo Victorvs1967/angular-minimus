@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { forkJoin, Subscription, Observable } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
+import { FbService } from 'src/app/service/fb/fb.service';
 import { UiService } from 'src/app/service/ui/ui.service';
 import { WeatherService } from 'src/app/service/weather/weather.service';
 
@@ -26,7 +27,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   errorMessage: string;
   tweets$: Observable<any>;
 
-  constructor(public activateRouter: ActivatedRoute, public weather: WeatherService, public ui: UiService) { }
+  constructor(public activateRouter: ActivatedRoute, public weather: WeatherService, public ui: UiService, public fb: FbService) { }
 
   ngOnInit(): void {
     this.sub1 = this.ui.darkModeState.subscribe(isDark => this.darkMode = isDark);
@@ -92,6 +93,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub1.unsubscribe();
     this.sub2.unsubscribe();
+  }
+
+  remSelectCity(city: string) {
+    this.fb.removeCity(city);
   }
 
 }

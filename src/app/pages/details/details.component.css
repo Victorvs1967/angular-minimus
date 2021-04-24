@@ -51,14 +51,45 @@
   overflow: hidden;
 }
 
-.back__button {
+.buttons__wrapper {
   position: absolute;
   top: 3rem;
   left: 3.25rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.back__button {
   width: 5rem;
   cursor: pointer;
   z-index: 6;
+}
+.remove-link {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   margin-top: 2rem;
+  text-decoration: none;
+}
+.material-icons {
+  font-size: 4rem;
+  width: 4rem;
+  height: 2rem;
+  margin-bottom: 2.5rem;
+  color: #2b244d;
+}
+.remove-text {
+  text-align: center;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+    color: #ffffff;
+
 }
 
 .city__illustration {

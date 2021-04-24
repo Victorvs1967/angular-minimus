@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AppGuard] },
   { path: 'details/:city', component: DetailsComponent, canActivate: [AppGuard] },
   { path: 'add', component: AddComponent, canActivate: [AppGuard] },
+  { path: 'remove/:city', component: DetailsComponent, canActivate: [AppGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' },
